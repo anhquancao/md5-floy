@@ -136,9 +136,10 @@ void md5(uint8_t *initial_msg, size_t initial_len)
     free(msg);
 }
 
-int compute_hash(char *msg, int hashLength, char *hash)
+int compute_hash(char *msg, int hash_length, char *return_hash)
 {
     size_t len = strlen(msg);
+    char hash[32];
 
     md5(msg, len);
 
@@ -185,12 +186,19 @@ int compute_hash(char *msg, int hashLength, char *hash)
         hash[j++] = temp[0];
         hash[j++] = temp[1];
     }
+
+    // return hash with hash length
+    for (i = 0; i < hash_length; i++)
+    {
+        return_hash[i] = hash[i];
+    }
+
     return 0;
 }
 
 int main(int argc, char **argv)
 {
-    char hash[32];
+
     if (argc < 2)
     {
         printf("usage: %s 'string'\n", argv[0]);
@@ -198,9 +206,10 @@ int main(int argc, char **argv)
     }
 
     char *msg = argv[1];
-    int hash_length = 32;
 
-    compute_hash(msg, hash_length, hash);
+    // compute hash with length = 10 characters (40 bits)
+    char hash[10];
+    compute_hash(msg, 10, hash);
 
     printf("%s\n", hash);
     return 0;
