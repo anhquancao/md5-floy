@@ -1,0 +1,39 @@
+1
+ 4       4
+the starting position is: 2 value: 4, the cycle length: 4
+2
+ 55      55
+the starting position is: 3 value: 55, the cycle length: 7
+3
+ afd     afd
+the starting position is: 27 value: afd, the cycle length: 37
+4
+ f86a    f86a
+the starting position is: 395 value: f86a, the cycle length: 270
+5
+ 70176   70176
+the starting position is: 459 value: 70176, the cycle length: 413
+6
+ 111a09          111a09
+the starting position is: 776 value: 111a09, the cycle length: 334
+7
+ 97a22cd         97a22cd
+the starting position is: 14884 value: 97a22cd, the cycle length: 28626
+8
+ 5f15d9b3        5f15d9b3
+the starting position is: 29798 value: 5f15d9b3, the cycle length: 35889
+9
+ 893e01b99       893e01b99
+the starting position is: 333430 value: 893e01b99, the cycle length: 60301
+10
+ 7cdf532fc6      7cdf532fc6
+the starting position is: 24393 value: 7cdf532fc6, the cycle length: 1036242
+11
+ 0bfcd3e6143     0bfcd3e6143
+the starting position is: 2514767 value: 0bfcd3e6143, the cycle length: 2483867 
+12 
+ 9083b5568365    9083b5568365 
+the starting position is: 6016483 value: 9083b5568365, the cycle length: 3772195 
+13 
+ 73dda3a0b502f   73dda3a0b502f 
+the starting position is: 13286454 value: 73dda3a0b502f, the cycle length: 78130783

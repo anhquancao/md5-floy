@@ -2,7 +2,7 @@
 #include <stdlib.h>
 #include <string.h>
 #include <stdint.h>
-
+#include <limits.h>
 // leftrotate function definition
 #define LEFTROTATE(x, c) (((x) << (c)) | ((x) >> (32 - (c))))
 
@@ -136,7 +136,7 @@ void md5(uint8_t *initial_msg, size_t initial_len)
     free(msg);
 }
 
-int compute_hash(char *msg, int hash_length, char *return_hash)
+char* compute_hash(char *msg, int hash_length, char *return_hash)
 {
     size_t len = strlen(msg);
     char hash[32];
@@ -192,25 +192,73 @@ int compute_hash(char *msg, int hash_length, char *return_hash)
     {
         return_hash[i] = hash[i];
     }
+		return_hash[hash_length] = '\0';
+    return return_hash;
+}
 
-    return 0;
+void floyd_cycle(char *msg, int hash_length){
+	//deploy Floyd cycle algorithms
+  // compute hash with length = 10 characters (40 bits)
+	char hash[33];
+	int i=0;
+	char temp[33], temp1[33], temp2[33];
+	
+
+	//step 1: find the starting repertition point
+		//Start with (a0, b0) ← (x0, x0) 
+		compute_hash(msg, hash_length, temp);     //hash(x0)
+	  compute_hash(msg, hash_length, temp1);    //
+		compute_hash(temp1, hash_length, temp1);	 //hash(hash(x0))
+		//Iteratively compute (ai, bi) ← (H(ai−1), H(H(bi−1))) = (xi, x2i) Stop whenever ai0 = bi0
+		while(strcmp(temp,temp1) !=0){
+			compute_hash(temp, hash_length, temp); // f(xi)
+	  	compute_hash(temp1, hash_length, temp1); // f(f(xi))
+			compute_hash(temp1, hash_length, temp1);
+			//if (temp == temp1){
+			//	printf("%s \t %s \n", temp, temp1);
+			//	break;		
+			//}
+		}
+		printf("%s \t %s \n", temp, temp1);
+	
+	//step 2 : Find the position μ of first repetition.
+		unsigned long mu = 0;
+		// Start with (c0, d0) ← (x0, xi0) = (x0, xk.δ)
+		compute_hash(msg, hash_length, temp2); // hash(x0)
+		compute_hash(temp1, hash_length, temp1);
+		// Iteratively compute (ci, di) ← (H(ci−1), H(di−1)) = (xi, xi+k.δ) Stop whenever ci1 = di1
+	  while (strcmp(temp1,temp2) !=0){
+	    compute_hash(temp2, hash_length, temp2);
+	    compute_hash(temp1, hash_length, temp1); 
+	    mu += 1;
+		}
+		
+		/*step 3: # Find the length of the shortest cycle starting from x_μ
+  	temp2 moves one step at a time while temp1 is still.
+  	lam is incremented until λ is found.  */
+			unsigned long lam = 1;
+			compute_hash(temp1, hash_length , temp2);    
+			while (strcmp(temp2,temp1) !=0){
+			    compute_hash(temp2, hash_length, temp2);
+			    lam += 1;
+			}
+			printf("the starting position is: %d value: %s, the cycle length: %d \n", mu, temp, lam);
 }
 
 int main(int argc, char **argv)
 {
-
-    if (argc < 2)
-    {
-        printf("usage: %s 'string'\n", argv[0]);
-        return 1;
-    }
-
-    char *msg = argv[1];
-
-    // compute hash with length = 10 characters (40 bits)
-    char hash[10];
-    compute_hash(msg, 10, hash);
-
-    printf("%s\n", hash);
-    return 0;
+  if (argc <2 ) {
+      printf("usage: %s 'string'\n", argv[0]);
+      return 1;
+  }
+	char *msg = argv[1];
+	int i;
+	for(i = 1; i< 32; i++){
+		printf("%d \n ", i);
+		floyd_cycle(msg, i);
+	}
+  return 0;
 }
+
+
+
