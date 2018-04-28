@@ -182,13 +182,12 @@ char *compute_hash(char *msg, int hash_length, char *return_hash) {
 
 void floyd_cycle(char *msg, int hash_length) {
     // deploy Floyd cycle algorithms
-    // compute hash with length = 10 characters (40 bits)
     char hash[33];
     int i = 0;
     char temp[33], temp1[33], temp2[33];
 
 
-    //step 1: find the starting repertition point
+    //step 1: find the starting repetition point
     //Start with (a0, b0) ← (x0, x0)
     compute_hash(msg, hash_length, temp);     //hash(x0)
     compute_hash(msg, hash_length, temp1);    //
