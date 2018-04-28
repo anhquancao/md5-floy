@@ -3,6 +3,7 @@
 #include <string.h>
 #include <stdint.h>
 #include <limits.h>
+#include <time.h>
 // leftrotate function definition
 #define LEFTROTATE(x, c) (((x) << (c)) | ((x) >> (32 - (c))))
 
@@ -242,7 +243,7 @@ void floyd_cycle(char *msg, int hash_length){
 			    compute_hash(temp2, hash_length, temp2);
 			    lam += 1;
 			}
-			printf("the starting position is: %d value: %s, the cycle length: %d \n", mu, temp, lam);
+			printf("the starting position is: %lu value: %s, the cycle length: %lu \n", mu, temp, lam);
 }
 
 int main(int argc, char **argv)
@@ -255,10 +256,16 @@ int main(int argc, char **argv)
 	int i;
 	for(i = 1; i< 32; i++){
 		printf("%d \n ", i);
+		clock_t t;
+		t = clock();
 		floyd_cycle(msg, i);
+		t = clock() - t;
+		double time_taken = ((double)t)/CLOCKS_PER_SEC;
+		printf("It took %f seconds to find the collision \n", time_taken); 
 	}
   return 0;
 }
 
-
-
+    
+    
+		

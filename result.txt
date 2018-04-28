@@ -1,39 +1,69 @@
-1
- 4       4
-the starting position is: 2 value: 4, the cycle length: 4
-2
- 55      55
-the starting position is: 3 value: 55, the cycle length: 7
-3
- afd     afd
-the starting position is: 27 value: afd, the cycle length: 37
-4
- f86a    f86a
-the starting position is: 395 value: f86a, the cycle length: 270
-5
- 70176   70176
-the starting position is: 459 value: 70176, the cycle length: 413
-6
- 111a09          111a09
-the starting position is: 776 value: 111a09, the cycle length: 334
-7
- 97a22cd         97a22cd
-the starting position is: 14884 value: 97a22cd, the cycle length: 28626
-8
- 5f15d9b3        5f15d9b3
-the starting position is: 29798 value: 5f15d9b3, the cycle length: 35889
-9
- 893e01b99       893e01b99
-the starting position is: 333430 value: 893e01b99, the cycle length: 60301
-10
- 7cdf532fc6      7cdf532fc6
-the starting position is: 24393 value: 7cdf532fc6, the cycle length: 1036242
+1 
+ 4       4 
+the starting position is: 2 value: 4, the cycle length: 4 
+It took 0.000179 seconds to find the collision 
+2 
+ 55      55 
+the starting position is: 3 value: 55, the cycle length: 7 
+It took 0.000255 seconds to find the collision 
+3 
+ afd     afd 
+the starting position is: 27 value: afd, the cycle length: 37 
+It took 0.001449 seconds to find the collision 
+4 
+ f86a    f86a 
+the starting position is: 395 value: f86a, the cycle length: 270 
+It took 0.017542 seconds to find the collision 
+5 
+ 70176   70176 
+the starting position is: 459 value: 70176, the cycle length: 413 
+It took 0.021961 seconds to find the collision 
+6 
+ 111a09          111a09 
+the starting position is: 776 value: 111a09, the cycle length: 334 
+It took 0.024590 seconds to find the collision 
+7 
+ 97a22cd         97a22cd 
+the starting position is: 14884 value: 97a22cd, the cycle length: 28626 
+It took 0.474426 seconds to find the collision 
+8 
+ 5f15d9b3        5f15d9b3 
+the starting position is: 29798 value: 5f15d9b3, the cycle length: 35889 
+It took 0.556531 seconds to find the collision 
+9 
+ 893e01b99       893e01b99 
+the starting position is: 333430 value: 893e01b99, the cycle length: 60301 
+It took 4.612152 seconds to find the collision
+10 
+ 7cdf532fc6      7cdf532fc6 
+the starting position is: 24393 value: 7cdf532fc6, the cycle length: 1036242 
+It took 10.609541 seconds to find the collision 
 11
  0bfcd3e6143     0bfcd3e6143
-the starting position is: 2514767 value: 0bfcd3e6143, the cycle length: 2483867 
-12 
- 9083b5568365    9083b5568365 
+the starting position is: 2514767 value: 0bfcd3e6143, the cycle length: 2483867
+It took 57.070452 seconds to find the collision
+12
+ 9083b5568365    9083b5568365
 the starting position is: 6016483 value: 9083b5568365, the cycle length: 3772195 
-13 
- 73dda3a0b502f   73dda3a0b502f 
-the starting position is: 13286454 value: 73dda3a0b502f, the cycle length: 78130783
+It took 96.235927 seconds to find the collision
+14
+ 5fb1b9babed121          5fb1b9babed121
+the starting position is: 150131 value: 5fb1b9babed121, the cycle length: 251570811
+It took 2569.621800 seconds to find the collision
+15
+ ed59cb493f4611e         ed59cb493f4611e
+the starting position is: 677936973 value: ed59cb493f4611e, the cycle length: 359935227
+It took 9901.764685 seconds to find the collision
+16
+ 94c5e2792b771d1a        94c5e2792b771d1a
+the starting position is: 2186539329 value: 94c5e2792b771d1a, the cycle length: 2791123759
+It took 39278.354373 seconds to find the collision
+17
+ 4159313d1cc998b77       4159313d1cc998b77
+the starting position is: 2040279723 value: 4159313d1cc998b77, the cycle length: 9897837213
+It took 115421.906773 seconds to find the collision
+18
+ 5a6faf40bff4a6fcac      5a6faf40bff4a6fcac
+the starting position is: 12289110524 value: 5a6faf40bff4a6fcac, the cycle length: 1504320835
+It took 170366.155369 seconds to find the collision
+
